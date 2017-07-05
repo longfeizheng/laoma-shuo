@@ -35,6 +35,23 @@ public class DynamicArray<E> {
         elementData[size++] = e;
     }
 
+    public void add(int index , E element){
+        ensureCapacity(size+1);
+        System.arraycopy(elementData,index,elementData,index+1,size-index);
+        elementData[index] = element;
+        size++;
+    }
+
+    public E remove(int index){
+        E oldValue = get(index);
+        int numMoved = size - index - 1;
+        if(numMoved>0){
+            System.arraycopy(elementData,index+1,elementData,index,numMoved);
+        }
+        elementData[--size] = null;
+        return oldValue;
+    }
+
     public E get(int index) {
         return (E) elementData[index];
     }
