@@ -1,0 +1,1 @@
+[Java 8十个lambda表达式案例](http://blog.csdn.net/Bryan__/article/details/51985197)
